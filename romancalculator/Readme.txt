@@ -6,3 +6,17 @@ There are some rules to a Roman number:
 	•	If a lesser numeral is put before a bigger it means subtraction of the lesser from the bigger ("IV" means four, "CM" means ninehundred)
 	•	If the numeral is I, X or C you can't have more than three ("II" + "II" = "IV")
 	•	If the numeral is V, L or D you can't have more than one ("D" + "D" = "M")
+
+
+Some Test cases
+
+V + V = X ( 5 + 5 = 10)
+
+XL + IV = XLIV  ( 40 + 4 = 44)
+
+CM + XXX = CMXXX ( 900 + 30 = 930)
+
+IX + II = XI ( 9 + 2 = 11)
+
+XVII + IX = XXVI ( 17 + 9 = 26)
+
