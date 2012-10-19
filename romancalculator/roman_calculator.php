@@ -51,9 +51,41 @@ $b = $_POST['B'];
 				 	} 		
 			 	} 
 			} elseif ($int == $value) {
-			 			$int = $key;
+			 			$str .= $key;
+			 			$int = $int - $value;
 			} else {
 				// need to see this case
+				if ($key == 'M' || $key == 'C' || $key == 'X') {
+					$keys = array_keys($romans);
+					foreach ($keys as $k => $v) {
+						if ($v == $key) {
+							$j = $k;
+						}
+					}
+					//evaluate from the 2 next values;
+					$j = $j + 2;					
+					for ($i=$j; $i < sizeof($keys); $i++) {
+						if ($value-$romans[$keys[$i]] <= $int) {
+							$int = $int - ($value-$romans[$keys[$i]]);
+							$str .= $keys[$i] . $key;							
+						}	
+					}				
+				} elseif ($key == 'D' || $key == 'L' || $key == 'V') {
+					$keys = array_keys($romans);
+					foreach ($keys as $k => $v) {
+						if ($v == $key) {
+							$j = $k;
+						}
+					}
+					//evaluate from the 2 next values;
+					$j = $j + 1;					
+					for ($i=$j; $i < sizeof($keys); $i++) {
+						if ($value-$romans[$keys[$i]] <= $int) {
+							$int = $int -	 ($value-$romans[$keys[$i]]);
+							$str .= $keys[$i] . $key;							
+						}	
+					}		
+				}
 			}
 		}
 
@@ -61,13 +93,30 @@ $b = $_POST['B'];
 	}
 
 /* TEST CASES */
-	echo romanToInt($a,$romans);
-	echo '<br/>';
-	echo intToRoman(romanToInt($a,$romans), $romans);
+	//echo romanToInt($a,$romans);
+	//echo '<br/>';
+	//echo intToRoman(romanToInt($a,$romans), $romans);
 
 
 
 /* FINAL RESULT */
 
-	//echo intToRoman(romanToInt($a,$romans)+romanToInt($a,$romans), $romans);	
+	$total = romanToInt($a,$romans)+romanToInt($b,$romans);
+	echo $total . '<br />';
+	echo intToRoman($total, $romans);	
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
