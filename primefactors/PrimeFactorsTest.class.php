@@ -76,6 +76,10 @@
 	    public function testEight() {	    	
 	    	$this->assertEqualsArrays(array(2,2,2), $this->prime_factor->generate(8), 'Error: Array different');	
 	    }
+
+	    public function testNine() {	    	
+	    	$this->assertEqualsArrays(array(3,3), $this->prime_factor->generate(9), 'Error: Array different');	
+	    }
 	}
 
 ?>

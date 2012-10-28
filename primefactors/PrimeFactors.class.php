@@ -38,14 +38,10 @@
 
 		function generate($int) {
 			$primes = array();
-			if ($int > 1) {
-				while ($int%2 == 0) {
-				array_push($primes, 2);
-				$int = $int/2;
-			}
-			if ($int > 1) {
-				array_push($primes, $int);
-			}
+			for ($candidate=2; $int > 1 ; $candidate++) { 
+				for (; $int%$candidate == 0 ; $int = $int / $candidate) { 
+					array_push($primes, $candidate);
+				}				
 			}
 			return $primes;
 		}
