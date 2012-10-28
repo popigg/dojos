@@ -48,12 +48,24 @@
 	        // your code here
 	    }
 
+	    function testList($int = null) {
+	    	$list = array();
+	    	for ($i=0; $i < $int; $i++) { 
+	    		array_push($list, $int);
+	    	}
+	    	return $list;
+	    }
+
 	    protected function assertEqualsArrays($expected, $actual, $message) {
     		$this->assertTrue(count($expected) == count(array_intersect($expected, $actual)), $message);
 		}
 
 	    public function testOne() {
-	    	$this->assertEqualsArrays(array(), $this->prime_factor->generate(1), 'Equals array TRUE');
+	    	$this->assertEqualsArrays($this->testList(), $this->prime_factor->generate(1), 'Equals array TRUE');
+	    }
+
+	    public function testTwo() {
+	    	$this->assertEqualsArrays($this->testList(2), $this->prime_factor->generate(2), 'Equals array TRUE');	
 	    }
 	}
 

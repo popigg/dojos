@@ -37,9 +37,11 @@
 	class PrimeFactors {
 
 		function generate($int) {
-			if ($int == 1) {
-				return array();
+			$primes = array();
+			if ($int > 1) {
+				array_push($primes, $int);
 			}
+			return $primes;
 		}
 
 	}
