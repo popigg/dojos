@@ -50,7 +50,7 @@
 
 
 	    protected function assertEqualsArrays($expected, $actual, $message) {
-    		$this->assertTrue(count($expected) == count(array_intersect($expected, $actual)), $message);
+    		$this->assertTrue($expected == $actual, $message);
 		}
 
 	    public function testOne() {
@@ -67,6 +67,14 @@
 
 	    public function testFour() {
 	    	$this->assertEqualsArrays(array(2,2), $this->prime_factor->generate(4), 'Error: Array different');	
+	    }
+
+	    public function testSix() {
+	    	$this->assertEqualsArrays(array(2,3), $this->prime_factor->generate(6), 'Error: Array different');	
+	    }
+
+	    public function testEight() {	    	
+	    	$this->assertEqualsArrays(array(2,2,2), $this->prime_factor->generate(8), 'Error: Array different');	
 	    }
 	}
 

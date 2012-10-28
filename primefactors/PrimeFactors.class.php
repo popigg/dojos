@@ -39,7 +39,7 @@
 		function generate($int) {
 			$primes = array();
 			if ($int > 1) {
-				if ($int%2 == 0) {
+				while ($int%2 == 0) {
 				array_push($primes, 2);
 				$int = $int/2;
 			}
