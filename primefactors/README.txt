@@ -1,0 +1,1 @@
+Write a method that takes in an integer and returns all prime factors for that number.
