@@ -7,9 +7,14 @@
 		function bowling_score_calculator ($score)
 		{
 			$result = 0;
+			$i = 0;
 
-			for ($i=0; $i < strlen($score); $i++) { 
-				$result += $score[$i];
+			while ($i < strlen($score)) { 				
+				if ($i > 0 && ($score[$i-1] + $score[$i] == 10)) {					
+					$score[$i+1] = 2 * $score[$i+1];					
+				}
+				$result += $score[$i];						
+				$i++;				
 			}
 			return $result;
 		}
