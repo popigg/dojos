@@ -25,6 +25,10 @@
 	    	$this->assertEquals(73, $this->bowlingCalculator->bowling_score_calculator('91415390107133238009'), 
 			'Not equal variables');
 	    }
+
+	    function testStrikes() {
+	    	
+	    }
 	}
 	
 
