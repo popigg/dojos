@@ -63,6 +63,12 @@
 	    	$this->roll_many(17, 0);
 	    	$this->assertEquals(24, $this->bowlingCalculator->score(), 'Error in Strike');
 	    }
+
+	    function testPerfectGame()
+	    {
+	    	$this->roll_many(12, 10);
+	    	$this->assertEquals(300, $this->bowlingCalculator->score(), 'Error in Perfect Game');
+	    }
 	}
 	
 
