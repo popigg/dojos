@@ -29,6 +29,11 @@
 	    	$this->bowlingCalculator->roll(5);
 	    }
 
+	    private function roll_strike()
+	    {
+	    	$this->bowlingCalculator->roll(10);
+	    }
+
 	    function testZero() 
 	    {
 	    	$this->roll_many(20, 0);	
@@ -52,7 +57,7 @@
 
 	    function testStrike()
 	    {
-	    	$this->bowlingCalculator->roll(10); // Strike
+	    	$this->roll_strike();
 	    	$this->bowlingCalculator->roll(3);
 	    	$this->bowlingCalculator->roll(4);
 	    	$this->roll_many(17, 0);
