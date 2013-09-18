@@ -2,7 +2,13 @@
 require_once __DIR__ . '/RomanCalculator.php';
 
 class RomanCalculatorTest extends PHPUnit_Framework_TestCase
-{	
+{
+	private $_romanCalculator;
+	public function setUp() 
+	{
+		$this->_romanCalculator = new RomanCalculator();
+	}	
+
 	public function providerSimpleRomansToInt()
 	{
 		return array(
@@ -21,7 +27,7 @@ class RomanCalculatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testSimpleRomansToInt ($expected, $given)
 	{
-		$this->assertEquals($expected ,RomanCalculator::simpleRomanToInt($given), 'Error in simpleRomanToInt');
+		$this->assertEquals($expected ,$this->_romanCalculator->simpleRomanToInt($given), 'Error in simpleRomanToInt');
 	}
 
 	public function providerComplexRomansToInt()
@@ -46,7 +52,7 @@ class RomanCalculatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testComplexRomansToInt($expected, $given) 
 	{
-		$this->assertEquals($expected ,RomanCalculator::complexRomansToInt($given), 'Error in combinedRomansToInt');
+		$this->assertEquals($expected ,$this->_romanCalculator->complexRomansToInt($given), 'Error in combinedRomansToInt');
 	}
 
 	public function providerSimpleIntToRoman()
@@ -67,7 +73,7 @@ class RomanCalculatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testSimpleIntToRoman($expected, $given)
 	{
-		$this->assertEquals($expected ,RomanCalculator::simpleIntToRoman($given), 'Error in simpleIntToRoman');
+		$this->assertEquals($expected ,$this->_romanCalculator->simpleIntToRoman($given), 'Error in simpleIntToRoman');
 	}
 
 	public function providerComplexIntToRoman()
@@ -101,6 +107,6 @@ class RomanCalculatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testComplexIntToRoman($expected, $given)
 	{
-		$this->assertEquals($expected ,RomanCalculator::complexIntToRoman($given), 'Error in complexIntToRoman');
+		$this->assertEquals($expected ,$this->_romanCalculator->complexIntToRoman($given), 'Error in complexIntToRoman');
 	}
 } 
